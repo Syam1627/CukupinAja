@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CukupinAja membantu siswa membagi uang saku, mencatat transaksi, dan mengatur anggaran agar tidak kehabisan dana di tengah bulan.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <title>CukupinAja – Atur uang saku, tanpa panik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <a href="#home" class="crop logo" style="--cx:115;--cy:850;--cw:1180;--ch:350" aria-label="CukupinAja">
+      <img src="assets/logo.png" alt="CukupinAja">
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active" data-link="home">Home</a>
+      <a href="#edukasi" data-link="edukasi">Edukasi</a>
+      <a href="#transaksi" data-link="transaksi">Transaksi</a>
+      <a href="#anggaran" data-link="anggaran">Anggaran</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#transaksi" class="btn btn-dark btn-sm">Mulai</a>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+  <!-- SECTION 1: HOME -->
+  <div class="hero-track" id="home">
+    <section class="hero">
+      <div class="grid-bg fade-asset"></div>
+
+      <!-- Frame video orang (desktop: canvas scroll animation) -->
+      <canvas id="man-canvas" aria-label="Pria panik melihat ponsel"></canvas>
+
+      <!-- Static man image (mobile only: behind text with reduced opacity) -->
+      <div class="man-mobile">
+        <img src="assets/man.png" alt="Pria panik melihat ponsel">
+      </div>
+
+      <div class="notif crop fade-asset n1" style="--cx:28;--cy:750;--cw:1351;--ch:422">
+        <img src="assets/notif.png" alt="">
+        <p class="msg">Dana anda habis!!!.</p>
+      </div>
+      <div class="notif crop fade-asset n2" style="--cx:28;--cy:750;--cw:1351;--ch:422">
+        <img src="assets/notif.png" alt="">
+        <p class="msg">Segera lunasi cicilan anda!!!.</p>
+      </div>
+
+      <div class="hero-text">
+        <h1 class="split" id="hero-title"><em class="serif">Masih</em> <span class="red">panik</span> uang <em class="serif">habis</em> di <span class="red">tanggal</span> muda?</h1>
+        <p class="split lead" id="hero-lead">Bantu kamu membagi jatah uang saku dan belanja harian agar tidak kehabisan dana di tengah bulan.</p>
+        <a href="#edukasi" class="btn btn-dark btn-lg" id="hero-cta">Mulai Menghitung →</a>
+        <div class="credit">
+          <span class="dots">
+            <img src="assets/cat1.jpg" alt="Foto profil Syamsudin" title="Syamsudin">
+            <img src="assets/cat2.jpg" alt="Foto profil Afifuddin" title="Afifuddin">
+          </span>
+          <span>Syamsudin dan Afifuddin</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SECTION 1.5: MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>KAMI TAU <em class="serif">SOLUSINYA</em></span>
+      <span>KAMI TAU <em class="serif">SOLUSINYA</em></span>
+      <span>KAMI TAU <em class="serif">SOLUSINYA</em></span>
+      <span>KAMI TAU <em class="serif">SOLUSINYA</em></span>
+    </div>
+    <div class="marquee-track" aria-hidden="true">
+      <span>KAMI TAU <em class="serif">SOLUSINYA</em></span>
+      <span>KAMI TAU <em class="serif">SOLUSINYA</em></span>
+      <span>KAMI TAU <em class="serif">SOLUSINYA</em></span>
+      <span>KAMI TAU <em class="serif">SOLUSINYA</em></span>
+    </div>
+  </div>
+
+  <!-- SECTION 2: EDUKASI -->
+  <section class="edu" id="edukasi">
+    <div class="grid-bg"></div>
+    <div class="crop man2" style="--cx:171;--cy:151;--cw:1054;--ch:1849">
+      <img src="assets/man.png" alt="">
+    </div>
+
+    <div class="edu-body">
+      <blockquote class="split quote" id="edu-quote">"<em class="serif">Studi</em> menunjukkan bahwa orang yang mencatat <em class="serif">pengeluaran harian</em> mampu menghemat <span class="red">15%</span> hingga <span class="red">30%</span> lebih banyak dibandingkan mereka yang <em class="serif">tidak mencatatnya</em> sama sekali."</blockquote>
+
+      <div class="stats">
+        <div class="stat-box"><span>0%</span></div>
+        <span class="arrow" aria-hidden="true">→</span>
+        <div class="stat-box wide"><span><b id="n15">0</b>% - <b id="n30">0</b>%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2.5: START HERE (statis) -->
+  <div class="start-band">
+    <span>Start here</span>
+  </div>
+
+  <!-- SECTION 3: TRANSAKSI -->
+  <section class="sec-transaksi" id="transaksi">
+    <div class="sec-inner">
+      <h2 class="sec-title"><em class="serif">Transaksi</em></h2>
+
+      <!-- Summary Cards -->
+      <div class="summary-cards">
+        <div class="s-card s-card--green">
+          <span class="s-card__label">Total Pemasukan</span>
+          <span class="s-card__value" id="totalPemasukan">Rp 0</span>
+        </div>
+        <div class="s-card s-card--red">
+          <span class="s-card__label">Total Pengeluaran</span>
+          <span class="s-card__value" id="totalPengeluaran">Rp 0</span>
+        </div>
+        <div class="s-card s-card--blue">
+          <span class="s-card__label">Saldo Saat Ini</span>
+          <span class="s-card__value" id="saldoSaatIni">Rp 0</span>
+        </div>
+      </div>
+
+      <!-- Form Transaksi Baru -->
+      <div class="form-card">
+        <h3 class="form-card__title">Catat Transaksi Baru</h3>
+        <form id="formTransaksi" autocomplete="off">
+          <div class="field">
+            <label for="trx-tanggal"><em class="serif">Tanggal</em></label>
+            <input type="date" id="trx-tanggal" required>
+          </div>
+          <div class="field">
+            <label for="trx-jenis"><em class="serif">Jenis</em></label>
+            <select id="trx-jenis">
+              <option value="pemasukan">Pemasukan</option>
+              <option value="pengeluaran">Pengeluaran</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="trx-nominal"><em class="serif">Nominal</em></label>
+            <input type="number" id="trx-nominal" min="0" value="0" required>
+          </div>
+          <div class="field">
+            <label for="trx-kategori"><em class="serif">Kategori</em></label>
+            <input type="text" id="trx-kategori" list="kategoriOptions" placeholder="Cth: Makanan, Gaji, Transportasi">
+            <datalist id="kategoriOptions"></datalist>
+          </div>
+          <div class="field">
+            <label for="trx-desc"><em class="serif">Catatan/Deskripsi</em></label>
+            <input type="text" id="trx-desc" placeholder="Tambahkan detail transaksi...">
+          </div>
+          <button type="submit" class="btn btn-dark btn-form"><em class="serif">Simpan Transaksi</em></button>
+        </form>
+        <p class="form-msg" id="trx-msg" role="status" aria-live="polite"></p>
+      </div>
+
+      <!-- Filter & Riwayat -->
+      <div class="filter-bar">
+        <input type="text" id="trx-search" placeholder="Cari riwayat (kategori/deskripsi)..." aria-label="Cari riwayat transaksi">
+        <select id="trx-filter-jenis" aria-label="Filter jenis transaksi">
+          <option value="semua">Semua Jenis</option>
+          <option value="pemasukan">Pemasukan</option>
+          <option value="pengeluaran">Pengeluaran</option>
+        </select>
+        <input type="date" id="trx-filter-date" aria-label="Filter tanggal transaksi">
+      </div>
+
+      <div class="table-wrap">
+        <table class="trx-table" id="trxTable">
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Kategori</th>
+              <th>Deskripsi</th>
+              <th>Jumlah</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="trxBody">
+            <!-- rows injected by JS -->
+          </tbody>
+        </table>
+        <div class="empty-state" id="trxEmpty">
+          <p><em class="serif">Belum ada transaksi yang dicatat.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: ANGGARAN -->
+  <section class="sec-anggaran" id="anggaran">
+    <div class="sec-inner">
+      <h2 class="sec-title"><em class="serif">Anggaran</em></h2>
+
+      <!-- Summary Cards -->
+      <div class="summary-cards summary-cards--2">
+        <div class="s-card s-card--blue">
+          <span class="s-card__label">Total Anggaran Disiapkan</span>
+          <span class="s-card__value" id="totalAnggaran">Rp 0</span>
+        </div>
+        <div class="s-card s-card--green">
+          <span class="s-card__label">Sisa Dana Aman</span>
+          <span class="s-card__value" id="sisaDanaAman">Rp 0</span>
+        </div>
+      </div>
+
+      <!-- Form Buat Anggaran -->
+      <div class="form-card">
+        <h3 class="form-card__title">Tetapkan Batas Anggaran</h3>
+        <form id="formAnggaran" autocomplete="off">
+          <div class="field">
+            <label for="ang-kategori"><em class="serif">Kategori</em></label>
+            <input type="text" id="ang-kategori" placeholder="Cth: Anggaran Makan" required>
+          </div>
+          <div class="field">
+            <label for="ang-batas"><em class="serif">Batas Maksimal Pengeluaran (Bulanan)</em></label>
+            <input type="number" id="ang-batas" min="0" value="0" required>
+          </div>
+          <button type="submit" class="btn btn-dark btn-form"><em class="serif">Buat Anggaran</em></button>
+        </form>
+        <p class="form-msg" id="ang-msg" role="status" aria-live="polite"></p>
+      </div>
+
+      <!-- Progress & Status -->
+      <h3 class="sub-heading">Progres & Status Anggaran</h3>
+      <div id="anggaranList" class="anggaran-list">
+        <div class="empty-state" id="angEmpty">
+          <p><em class="serif">Belum ada anggaran yang dibuat.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="crop logo footer-logo" style="--cx:115;--cy:850;--cw:1180;--ch:350" aria-label="CukupinAja">
+          <img src="assets/logo.png" alt="CukupinAja">
+        </a>
+        <p class="footer-tagline">Atur uang saku, tanpa panik di tanggal muda.</p>
+        <p class="footer-school">SMK Telekomunikasi Darul Ulum</p>
+      </div>
+
+      <div class="footer-team">
+        <h2 class="footer-heading">Tim Pengembang</h2>
+        <ul class="team-list">
+          <li class="team-member">
+            <span class="avatar"><img src="assets/cat1.jpg" alt="Foto profil Syamsudin"></span>
+            <span class="team-name">Syamsudin</span>
+          </li>
+          <li class="team-member">
+            <span class="avatar"><img src="assets/cat2.jpg" alt="Foto profil Afifuddin"></span>
+            <span class="team-name">Afifuddin</span>
+          </li>
+        </ul>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navigasi footer">
+        <h2 class="footer-heading">Navigasi</h2>
+        <a href="#home">Home</a>
+        <a href="#edukasi">Edukasi</a>
+        <a href="#transaksi">Transaksi</a>
+        <a href="#anggaran">Anggaran</a>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear">2026</span> CukupinAja. Dibuat oleh Syamsudin &amp; Afifuddin.</p>
+    </div>
+  </footer>
+
+  <!-- JS Lokal -->
+  <script src="js/anime.umd.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/transaksi.js"></script>
+</body>
+</html>
